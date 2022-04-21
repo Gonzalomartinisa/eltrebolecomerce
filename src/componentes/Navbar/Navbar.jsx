@@ -1,4 +1,5 @@
 import React from 'react'
+import { BsCart } from 'react-icons/bs';
 
 const Navbar = () => {
   return (
@@ -28,12 +29,12 @@ const Navbar = () => {
           </ul>
         </li>
         <li className="nav-item">
-          <a className="nav-link disabled"></a>
+         <h3 className='d-flex p-2 bg-light'><BsCart/></h3>
         </li>
       </ul>
       <form className="d-flex">
         <input className="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"></input>
-        <button className="btn btn-outline-success" type="submit">Buscar</button>
+        <button className="btn btn-outline-success p-2" type="submit">Buscar</button>
       </form>
     </div>
   </div>
