@@ -1,5 +1,5 @@
 import React from 'react'
-import { BsCart } from 'react-icons/bs';
+import Cardwidget from '../Cardwidget/Cardwidget'
 
 const Navbar = () => {
   return (
@@ -29,7 +29,7 @@ const Navbar = () => {
           </ul>
         </li>
         <li className="nav-item">
-         <h3 className='d-flex p-2 bg-light'><BsCart/></h3>
+         <Cardwidget/>
         </li>
       </ul>
       <form className="d-flex">
