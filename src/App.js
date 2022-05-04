@@ -10,8 +10,8 @@ function App() {
   return (
     <div>
       <Navbar/>
+      <h1 className='d-flex justify-content-center'>Productos destacados</h1>
       <div className='d-flex'>
-      <h2>Productos destacados</h2>
       <ItemListContainer/></div>
       <ItemCount/> 
       <Footer/>

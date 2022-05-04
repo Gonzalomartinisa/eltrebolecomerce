@@ -3,12 +3,14 @@ import Item from "../Item/Item";
 
 const ItemList = ({productos}) => {
   return (
-    <main className='d-flex justify-content-evenly w-100 p-2'>
+    <main className='d-flex justify-content-evenly w-100 p-5'>
       {productos.length > 0 ? (
         productos.map((producto) => <Item 
-        stock={"Nombre del producto"}
-        descripcion={"Descipcion del producto"}
-        precio={"Precio"}
+        img={producto.img}
+        nombre={producto.nombre}
+        descripcion={producto.descripcion}
+        stock={producto.stock}
+        precio={producto.precio}
         />)
       ) : (
         <h1>Cargando...</h1>
