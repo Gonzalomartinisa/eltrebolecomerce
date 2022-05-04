@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
-import { BsCart } from 'react-icons/bs';
-const Cardwidget = () => {
+// import { BsCart } from 'react-icons/bs';
+const Cardwidget = ({Icon, color, size}) => {
+
   return (
-    <h3 className='d-flex p-2 bg-light'><BsCart/></h3>
+    <div>
+      {<Icon style={{color: color, fontSize: size}}/>}
+    </div>
+   
     )
 }
 
