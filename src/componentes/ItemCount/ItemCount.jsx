@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const ItemCount = () => {
-  var stock = 5;
+  var stock = 20;
 
   const [contador, setContador] = useState(1);
 
@@ -23,8 +23,7 @@ const ItemCount = () => {
   }
 
   return (
-    <div>
-      <h1>Agregar al carro</h1>
+    <div className="d-flex justify-content-center p-5">
       <div>
         <h2>El stock es de {stock} unidades</h2>
 
@@ -35,9 +34,9 @@ const ItemCount = () => {
             width: "300px",
           }}
         >
-          <button onClick={sumar}>+</button>
+          <button className="btn btn-primary" onClick={sumar}>+</button>
           <h1>{contador}</h1>
-          <button onClick={restar}>-</button>
+          <button className="btn btn-primary" onClick={restar}>-</button>
         </div>
       </div>
       <div
@@ -49,7 +48,7 @@ const ItemCount = () => {
           margin: "10px",
         }}
       >
-        <button onClick={comprar}>Comprar</button>
+        <button className="btn btn-primary" onClick={comprar}>Comprar</button>
       </div>
     </div>
   );

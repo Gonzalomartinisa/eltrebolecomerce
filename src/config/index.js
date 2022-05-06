@@ -1,0 +1,43 @@
+export  const data = [
+    {
+      id:1,
+      nombre:"Roas beef",
+      stock:20,
+      descripcion: "Carne vacuna",
+      //descripcion: "El roast beef es un corte de buey tierno que se asa al horno. En la cocina inglesa, y por extensión en muchos países de tradición anglosajona como Australia, el roast beef es un plato muy tradicional, servido preferentemente los domingos.",
+      precio: 1150,
+      img: 'https://static.diariovasco.com/www/multimedia/201906/03/media/cortadas/carne-roja-kS1C-R5uqUSGFlSqj84mn1I9bQuN-624x385@Diario%20Vasco.jpg',
+    },
+    {
+      id:2,
+      nombre:"Asado",
+      stock:10,
+      descripcion: "Carne vacuna",
+      precio: 1250,
+      img: 'https://static.diariovasco.com/www/multimedia/201906/03/media/cortadas/carne-roja-kS1C-R5uqUSGFlSqj84mn1I9bQuN-624x385@Diario%20Vasco.jpg',
+    },
+    {
+      id:3,
+      nombre:"Bondiola",
+      stock:20,
+      descripcion: "Carne porcina",
+      precio: 850,
+      img: 'https://elgourmet.s3.amazonaws.com/recetas/cover/bondi_WV2YC6bQEuTpRmkF79rBAKHZhzoa4v.png',
+    },
+    {
+      id:4,
+      nombre:"Pollo",
+      stock:50,
+      descripcion: "Carne de ave",
+      precio: 350,
+      img: 'https://www.paulinacocina.net/wp-content/uploads/2021/11/pollo-asado.jpg',
+    },
+    {
+      id: 5,
+      nombre:"Bife de chorizo",
+      stock: 15,
+      descripcion: "Carne vacuna",
+      precio: 1850,
+      img: 'https://static.diariovasco.com/www/multimedia/201906/03/media/cortadas/carne-roja-kS1C-R5uqUSGFlSqj84mn1I9bQuN-624x385@Diario%20Vasco.jpg',
+   },
+  ];

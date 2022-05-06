@@ -6,6 +6,8 @@ const ItemList = ({productos}) => {
     <main className='d-flex justify-content-evenly w-100 p-5'>
       {productos.length > 0 ? (
         productos.map((producto) => <Item 
+        key={producto.id}
+        id={producto.id}
         img={producto.img}
         nombre={producto.nombre}
         descripcion={producto.descripcion}

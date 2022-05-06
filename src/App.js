@@ -3,6 +3,8 @@ import Navbar from './componentes/Navbar/Navbar';
 import Content from './componentes/Content/Content';
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer';
 import ItemCount from './componentes/ItemCount/ItemCount';
+import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer';
+import Rutas from './routes/Rutas';
 
 
 function App() {
@@ -10,10 +12,7 @@ function App() {
   return (
     <div>
       <Navbar/>
-      <h1 className='d-flex justify-content-center'>Productos destacados</h1>
-      <div className='d-flex'>
-      <ItemListContainer/></div>
-      <ItemCount/> 
+      <Rutas/>
       <Footer/>
     </div>
   );
