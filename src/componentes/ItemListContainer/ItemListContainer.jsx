@@ -67,6 +67,7 @@ const [productos, setProductos] = useState([])
  
   return (
     <div className='d-flex row justify-content-evenly w-100 p-2'>
+      <h1 className='d-flex justify-content-center p-5'>Bienvenidos a la tienda online de carniceria El Trebol</h1>
       <ItemList productos = {productos}/>
     </div>
   )

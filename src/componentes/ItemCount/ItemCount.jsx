@@ -25,8 +25,7 @@ const ItemCount = () => {
   return (
     <div className="d-flex justify-content-center p-5">
       <div>
-        <h2>El stock es de {stock} unidades</h2>
-
+        <h2>El stock es de {stock} kilos</h2>
         <div
           style={{
             display: "flex",

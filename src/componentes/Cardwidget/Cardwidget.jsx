@@ -6,7 +6,6 @@ const Cardwidget = ({Icon, color, size}) => {
     <div>
       {<Icon style={{color: color, fontSize: size}}/>}
     </div>
-   
     )
 }
 

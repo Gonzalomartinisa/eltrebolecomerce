@@ -9,7 +9,7 @@ const ItemDetailContainer = () => {
 
   const [producto, setProducto] = useState(null)
 
-  const filtrado = data.find((prod) => prod.id === Number(id))
+  const filtrado = data.find((prod) => prod.id === Number(id));
 
  useEffect(() => {
   const promesa = new Promise((resolve, reject) => {
@@ -18,19 +18,20 @@ const ItemDetailContainer = () => {
     },2000);
     })
   promesa.then((res)=>{
-    setProducto(res)
+    setProducto(filtrado)
+    console.log(filtrado)
   }).catch((err)=>
     console.log(err)
   )
  
-    return () => {
+     return () => {
      
   }
  }, []);
  
   return (
      <div className='d-flex row justify-content-evenly w-100 p-2'>
-         {producto ? <Item producto={producto}/> : <h1>Cargando...</h1> }
+         {producto ? <ItemDetail producto={producto}/> : <h1>Cargando...</h1> }
      </div>
   )
 }
