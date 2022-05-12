@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-
-const ItemCount = () => {
-  var stock = 20;
-
+import { Link } from "react-router-dom";
+const ItemCount = ({stock, click}) => {
+  
   const [contador, setContador] = useState(1);
 
   function sumar(params) {
@@ -17,10 +16,15 @@ const ItemCount = () => {
     }
   }
 
-  function comprar() {
+   function comprar() {
     stock = stock - contador;
     console.log(stock);
   }
+
+  //   const handleClick = (e) => {
+  //   cantidadAAgregar = contador
+  //   console.log(cantidadAAgregar) 
+  // }
 
   return (
     <div className="d-flex justify-content-center p-5">
@@ -42,12 +46,13 @@ const ItemCount = () => {
         style={{
           display: "flex",
           justifyContent: "space-around",
-          width: "300px",
+          width: "200px",
           padding: "10px",
           margin: "10px",
         }}
       >
-        <button className="btn btn-primary" onClick={comprar}>Comprar</button>
+        <Link to="" onClick={() => click(contador)}  className="btn btn-success w-100 text-light">Añadir al carro</Link>
+        {/* <button className="btn btn-primary" onClick={handleClick}>Comprar</button> */}
       </div>
     </div>
   );

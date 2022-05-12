@@ -1,7 +1,7 @@
 import React from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 
-const Card = ({id, nombre, stock, descripcion, precio, tipo, coccion, img}) => {
+const Card = ({id, nombre, stock, descripcion, precio, tipo, coccion, img, cantidadComprada}) => {
   return (
     <div className="card" style={{width:"500px", fontSize:"20px", fontFamily:"sans-serif", backgroundColor:"coral"}}>
     <img src={img} className="card-img-top" alt="..."/>
@@ -12,7 +12,7 @@ const Card = ({id, nombre, stock, descripcion, precio, tipo, coccion, img}) => {
       <p className="card-text">{coccion}</p>
       <p className="card-text">Precio: {precio} pesos</p>
       <p className="card-text">Stock: {stock} kilos</p>
-      <ItemCount/>
+      {/* <ItemCount/> */}
     </div>
   </div>
   )
