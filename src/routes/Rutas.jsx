@@ -4,7 +4,7 @@ import ItemDetailContainer from "../componentes/ItemDetailContainer/ItemDetailCo
 import Ingresa from "../Views/Ingresa/Ingresa"
 import Layout from "../componentes/Layout/Layout"
 import Error from "../Views/Error/Error"
-import Carrito from "../Views/Carrito/Carrito"
+import CartContext from "../Views/Carrito/CartContext"
 import Nosotros from "../Views/Nosotros/Nosotros"
 const Rutas = () => {
   return (
@@ -14,7 +14,7 @@ const Rutas = () => {
         <Route path="/" element={<Layout/>}>
              <Route index element={<ItemListContainer/>}/>
              <Route path="/Item-detail/:id/" element={<ItemDetailContainer/>}/>
-             <Route path="/Carrito" element={<Carrito/>}/>
+             <Route path="/CartContext" element={<CartContext/>}/>
              <Route path="/Ingresa" element={<Ingresa/>}/>
              <Route path="/Nosotros" element={<Nosotros/>}/>
         </Route>

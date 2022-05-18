@@ -21,20 +21,9 @@ const Navbar = () => {
           <NavLink className="nav-link" to="/Ingresa">Ingresa</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/Nosotros">Nostros</NavLink>
+          <NavLink className="nav-link" to="/Nosotros">Nosotros</NavLink>
         </li>
-        {/* <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-           Mis compras
-          </a>
-          <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a className="dropdown-item" href="#">Historial</a></li>
-            <li><a className="dropdown-item" href="#">Favoritos</a></li>
-            <li><hr className="dropdown-divider"></hr></li>
-            <li><a className="dropdown-item" href="#">Opciones</a></li>
-          </ul>
-        </li> */}
-        <NavLink to="/Carrito" className="nav-item">
+        <NavLink to="/CartContext" className="nav-item">
          <Cardwidget Icon={BsCart} color={"white"} size={"30px"}/>
         </NavLink>
       </ul>

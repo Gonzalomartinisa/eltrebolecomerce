@@ -4,7 +4,6 @@ import ItemCount from "../ItemCount/ItemCount";
 import Card from "../Card/Card";
 import { useState } from 'react'
 
-
 const ItemDetail = ({ producto }) => {
 
   const [cantidadComprada, setCantidadComprada] = useState(0)
@@ -28,7 +27,7 @@ const ItemDetail = ({ producto }) => {
           descripcion={producto.descripcion}/>
           <h2>Vas a comprar {cantidadComprada} kilos de {producto.nombre}</h2>
           {cantidadComprada > 0 ? (
-         <Link to={'/cart'}> <button>Finalizar Compra</button></Link> 
+         <Link to={'/CartContext'}> <button>Finalizar Compra</button></Link> 
          ) :(
           <ItemCount stock={producto.stock}
           click={cantidadAAgregar}/>
