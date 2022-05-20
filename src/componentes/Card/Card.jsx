@@ -1,5 +1,4 @@
 import React from 'react'
-import ItemCount from '../ItemCount/ItemCount'
 
 const Card = ({id, nombre, stock, descripcion, precio, tipo, coccion, img, cantidadComprada}) => {
   return (

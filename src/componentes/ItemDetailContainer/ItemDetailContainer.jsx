@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { data } from '../../config'
 import { useParams } from "react-router-dom"
-import Item from '../Item/Item'
+import Loader from '../../Views/Loader/Loader'
 const ItemDetailContainer = () => {
 
   const {id} = useParams()
@@ -31,7 +31,7 @@ const ItemDetailContainer = () => {
  
   return (
      <div className='d-flex row justify-content-evenly w-100 p-2'>
-         {producto ? <ItemDetail producto={producto}/> : <h1>Cargando...</h1> }
+         {producto ? <ItemDetail producto={producto}/> : <Loader/> }
      </div>
   )
 }

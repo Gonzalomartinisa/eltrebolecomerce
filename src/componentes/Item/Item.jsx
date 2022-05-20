@@ -2,10 +2,11 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { GlobalContext } from '../../context/GlobalStateContext'
+import NumeroCarrito from '../../Views/Carrito/NumeroCarrito/NumeroCarrito'
 
-const Item = ({id, nombre, stock, tipo, precio, img}) => {
+const Item = ({id, nombre, stock, tipo, precio, img,}) => {
 
-   const {carrito, agregarCarrito} = useContext(GlobalContext);
+   const {carrito, agregarCarrito, sumarCarrito} = useContext(GlobalContext);
    
    const [productos, setProductos] = useState({id, nombre, stock, tipo, precio, img});
  

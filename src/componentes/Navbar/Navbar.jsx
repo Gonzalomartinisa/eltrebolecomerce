@@ -2,6 +2,7 @@ import React from 'react'
 import Cardwidget from '../Cardwidget/Cardwidget'
 import { BsCart } from 'react-icons/bs';
 import { Link, NavLink } from 'react-router-dom';
+import NumeroCarrito from '../../Views/Carrito/NumeroCarrito/NumeroCarrito';
 
 const Navbar = () => {
   return (
@@ -26,6 +27,7 @@ const Navbar = () => {
         <NavLink to="/CartContext" className="nav-item">
          <Cardwidget Icon={BsCart} color={"white"} size={"30px"}/>
         </NavLink>
+        <li className='nav-item bg-success'><NumeroCarrito/></li>
       </ul>
       <form className="d-flex">
         <input className="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"></input>

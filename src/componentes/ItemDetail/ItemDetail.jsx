@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import Card from "../Card/Card";
 import { useState } from 'react'
 
 const ItemDetail = ({ producto }) => {
+
 
   const [cantidadComprada, setCantidadComprada] = useState(0)
   const cantidadAAgregar = (contador) => {
@@ -27,15 +28,16 @@ const ItemDetail = ({ producto }) => {
           descripcion={producto.descripcion}/>
           <h2>Vas a comprar {cantidadComprada} kilos de {producto.nombre}</h2>
           {cantidadComprada > 0 ? (
-         <Link to={'/CartContext'}> <button>Finalizar Compra</button></Link> 
+          <Link to={'/CartContext'}> <button sclassName='btn btn-success my-5'>Agregar al carro</button></Link> 
          ) :(
           <ItemCount stock={producto.stock}
           click={cantidadAAgregar}/>
           )}
       </div>
     </div>
-
   );
 };
 
 export default ItemDetail;
+
+// onClick={() => agregarCarrito(productos)}

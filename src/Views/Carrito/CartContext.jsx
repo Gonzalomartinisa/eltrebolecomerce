@@ -10,7 +10,7 @@ const CartContext = () => {
     <>
       <div className='d-flex justify-content-center'></div>
        <h1>En tu carrito encontraras los productos seleccionados</h1>
-       
+      
       {carrito.length > 0 ? carrito.map((item, index) => {
         
      return (
@@ -24,13 +24,12 @@ const CartContext = () => {
      <button onClick={() => eliminarProducto(item.id)} className='btn btn-success my-5'>Quitar del carro</button>
      </div>
      </div>
-     
      )}
 
      ) : <h1>El carrito esta vacio </h1>}
     <Link className="btn btn-success my-5 m-2" to="/"><i className="mx-1 bi bi-arrow-left"></i>Volver</Link>
     <button onClick={() => clear(carrito)} className='btn btn-success my-5 m-2'>Vaciar el carro</button>  
-      </>
+      </>      
   )
 }
 
