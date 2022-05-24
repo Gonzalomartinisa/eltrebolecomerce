@@ -16,32 +16,14 @@ const ItemCount = ({stock, click}) => {
     }
   }
 
-   function comprar() {
-    stock = stock - contador;
-    console.log(stock);
-  }
-
-  //   const handleClick = (e) => {
-  //   cantidadAAgregar = contador
-  //   console.log(cantidadAAgregar) 
-  // }
-
   return (
     <div className="d-flex justify-content-center p-5">
-      <div>
-        <h2>El stock es de {stock} kilos</h2>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-around",
-            width: "300px",
-          }}
-        >
-          <button className="btn btn-primary" onClick={sumar}>+</button>
-          <h1>{contador}</h1>
-          <button className="btn btn-primary" onClick={restar}>-</button>
+        <div>
+        <h3>Cantidad a comprar {contador}</h3>
+          <button className="btn btn-danger text-light m-2" onClick={sumar}>+</button>
+          <button className="btn btn-danger text-light m-2" onClick={restar}>-</button>
         </div>
-      </div>
+      
       <div
         style={{
           display: "flex",
@@ -51,8 +33,8 @@ const ItemCount = ({stock, click}) => {
           margin: "10px",
         }}
       >
-        <Link to="" onClick={() => click(contador)}  className="btn btn-success w-100 text-light">Añadir al carro</Link>
-        {/* <button className="btn btn-primary" onClick={handleClick}>Comprar</button> */}
+        <Link to="" onClick={() => click(contador)}  className="btn btn-success w-100 text-light">Agregar al carro</Link>
+      
       </div>
     </div>
   );

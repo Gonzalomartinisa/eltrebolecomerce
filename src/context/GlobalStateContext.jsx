@@ -14,10 +14,6 @@ const GlobalProvider = ({children}) => {
         setCarrito([...carrito, productos])
       }}
 
-    // const sumarCarrito = () => {
-    //   setCarrito(carrito + 1);
-    // }
-
     const clear = () => setCarrito([])
 
     const eliminarProducto = (id) => {

@@ -2,11 +2,10 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { GlobalContext } from '../../context/GlobalStateContext'
-import NumeroCarrito from '../../Views/Carrito/NumeroCarrito/NumeroCarrito'
 
-const Item = ({id, nombre, stock, tipo, precio, img,}) => {
+const Item = ({id, nombre, stock, tipo, precio, img}) => {
 
-   const {carrito, agregarCarrito, sumarCarrito} = useContext(GlobalContext);
+   const {carrito, agregarCarrito} = useContext(GlobalContext);
    
    const [productos, setProductos] = useState({id, nombre, stock, tipo, precio, img});
  
@@ -18,8 +17,9 @@ const Item = ({id, nombre, stock, tipo, precio, img,}) => {
       <p className="card-text">{tipo}</p>
       <p className="card-text">Precio: {precio} pesos</p>
       <p className="card-text">Stock: {stock} kilos</p>
-      <button onClick={() => agregarCarrito(productos)} className='btn btn-success my-5'>Agregar al carro</button>
-      <Link to={`/Item-detail/${id}`} className="btn btn-primary">Detalle</Link>
+      <Link to={`/Item-detail/${id}`} className="btn btn-primary">Ver el detalle</Link>
+      {/* <ItemCount/> */}
+      <button onClick={() => agregarCarrito(productos)} className='btn btn-success my-5'>Agregar al carro</button> 
     </div>
   </div>
   )

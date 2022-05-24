@@ -20,6 +20,7 @@ const Formulario = ({total, compra}) => {
 
     const {buyer: {nombre, email, apellido, telefono}} = formulario;
 
+    const onSubmit = (e) => {}
   return (
     <div>Formulario</div>
   )

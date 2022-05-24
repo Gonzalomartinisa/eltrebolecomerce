@@ -1,43 +1,49 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import Card from "../Card/Card";
 import { useState } from 'react'
+import { GlobalContext } from "../../context/GlobalStateContext";
 
-const ItemDetail = ({ producto }) => {
+const ItemDetail = ({ productos: {id, img, nombre, precio, stock, coccion, tipo, descripcion}}) => {  
+  
+  const {carrito, agregarCarrito} = useContext(GlobalContext)
 
-
-  const [cantidadComprada, setCantidadComprada] = useState(0)
-  const cantidadAAgregar = (contador) => {
+    const [cantidadComprada, setCantidadComprada] = useState(0)
+    const cantidadAAgregar = (contador) => {
     setCantidadComprada(contador)
-  }
+   }
 
+   const [state, setState] = useState({})
+   useEffect(() => {
+      setState({id, img, nombre, cantidadComprada, precio, coccion, descripcion})
+    }, [img])
+
+  const item = {
+    id: id, img: img, nombre: nombre, precio: precio, stock: stock, coccion: coccion, descripcion: descripcion, cantidad: cantidadComprada}
+
+  
   return (
-    <div className="d-flex justify-content-evenly bg-opacity-25 w-100 p-5">
-      <div>
-        {" "}
-        <Card
-          key={producto.id}
-          id={producto.id}
-          img={producto.img}
-          nombre={producto.nombre}
-          precio={producto.precio}
-          stock={producto.stock}
-          coccion={producto.coccion}
-          tipo={producto.tipo}
-          descripcion={producto.descripcion}/>
-          <h2>Vas a comprar {cantidadComprada} kilos de {producto.nombre}</h2>
-          {cantidadComprada > 0 ? (
-          <Link to={'/CartContext'}> <button sclassName='btn btn-success my-5'>Agregar al carro</button></Link> 
-         ) :(
-          <ItemCount stock={producto.stock}
-          click={cantidadAAgregar}/>
-          )}
-      </div>
+    <div className="card" style={{width:"500px", fontSize:"20px", fontFamily:"sans-serif", backgroundColor:""}}>
+    <img src={img} className="card-img-top" alt="..."/>
+    <div className="card-body">
+      <h2 className="card-title">{nombre}</h2>
+      <p className="card-text">{tipo}</p>
+      <p className="card-text">{descripcion}</p>
+      <p className="card-text">{coccion}</p>
+      <p className="card-text">Precio: {precio} pesos</p>
+      <p className="card-text">Stock: {stock} kilos</p>
+      {cantidadComprada > 0 ? (
+        <Link to={'/CartContext'} onClick={() => agregarCarrito(item)} className='btn btn-success my-5'>Ir al carrito</Link>
+      ) : (
+      <ItemCount stock={stock}
+          click={cantidadAAgregar}/>      
+      )}
+      <Link to={"/"} className="btn btn-primary my-5 m-2"><i className="mx-1 bi bi-arrow-left"></i>Volver</Link> 
     </div>
+  </div>
   );
-};
+}
 
 export default ItemDetail;
 
-// onClick={() => agregarCarrito(productos)}
