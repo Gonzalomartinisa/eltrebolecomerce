@@ -1,8 +1,7 @@
 import React from "react";
 import Item from "../Item/Item";
 import Loader from "../../Views/Loader/Loader";
-import db from '../../service/firebase'
-import { collection, doc, getDoc, getDocs, getFirestore } from 'firebase/firestore'
+
 
 const ItemList = ({productos}) => {
 

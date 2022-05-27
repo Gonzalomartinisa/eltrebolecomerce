@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { GlobalContext } from '../../context/GlobalStateContext'
 import { Link } from 'react-router-dom';
-import ItemCount from '../../componentes/ItemCount/ItemCount';
+import Formulario from '../../componentes/Formulario/Formulario';
 
 const CartContext = () => {
 
@@ -31,8 +31,12 @@ const CartContext = () => {
 
      ) : <h1>El carrito esta vacio </h1>}
     <Link className="btn btn-success my-5 m-2" to="/"><i className="mx-1 bi bi-arrow-left"></i>Volver</Link>
-    <button onClick={() => clear(carrito)} className='btn btn-success my-5 m-2'>Vaciar el carro</button>   
+    <button onClick={() => clear(carrito)} className='btn btn-success my-5 m-2'>Vaciar el carro</button> 
+
+    <Formulario carrito={carrito}/>  
       </>      
+
+      
   )
 }
 
