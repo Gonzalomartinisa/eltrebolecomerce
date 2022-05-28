@@ -6,7 +6,7 @@ import Loader from "../../Views/Loader/Loader";
 const ItemList = ({productos}) => {
 
   return (
-    <main className='d-flex justify-content-evenly w-100 p-5'>
+    <main className='d-flex row justify-content-evenly w-200 p-5'>
       {productos.length > 0 ? (
         productos.map((producto) => <Item 
         key={producto.id}

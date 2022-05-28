@@ -1,5 +1,5 @@
-import React, { createContext, useState } from 'react'
-import NumeroCarrito from '../Views/Carrito/NumeroCarrito/NumeroCarrito'
+import React, { createContext, useEffect, useState } from 'react'
+import Toastify from 'toastify-js'
 
 export const GlobalContext = createContext('')
 
@@ -9,7 +9,10 @@ const GlobalProvider = ({children}) => {
 
     const agregarCarrito = (productos) => {
       if (carrito.find(ite => ite.id === productos.id)){
-        alert("Ya agregaste ese producto al carrito")
+        Toastify({
+          text: "Ya agregaste este producto a tu carrito",
+          duration: 2000
+         }).showToast();
       } else {
         setCarrito([...carrito, productos])
       }}
@@ -21,9 +24,18 @@ const GlobalProvider = ({children}) => {
       setCarrito(borrarProducto)
   }
 
+    const [total, setTotal] = useState(0)
+
+    useEffect(() => {
+      const calculoTotal = carrito.reduce(
+        (total, productos) => total + productos.cantidad * productos.precio, 0)
+      setTotal(calculoTotal);
+    }, [carrito])
+    
+    
   return (
     <div>
-    <GlobalContext.Provider value={{carrito, agregarCarrito, clear, eliminarProducto}}>
+    <GlobalContext.Provider value={{carrito, agregarCarrito, clear, eliminarProducto, total}}>
         {children}
     </GlobalContext.Provider>
     </div>

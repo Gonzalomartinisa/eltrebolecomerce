@@ -16,7 +16,6 @@ const [productos, setProductos] = useState([])
         const data = await getDocs(itemCollection)
         const result = data.docs.map(doc => doc = {id:doc.id, ...doc.data()})
         setProductos(...productos,result)
-        console.log(result)
       } catch (error) {
         console.log(error, "Error")
       }
