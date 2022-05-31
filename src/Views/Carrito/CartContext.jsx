@@ -34,7 +34,7 @@ const CartContext = () => {
                       <p className="card-text">Sub-Total: {subTotal} pesos</p>
                       <button
                         onClick={() => eliminarProducto(item.id)}
-                        className="btn btn-success my-5"
+                        className="btn btn-danger my-5"
                       >
                         Quitar del carro
                       </button>
@@ -54,7 +54,7 @@ const CartContext = () => {
             </Link>
             <button
               onClick={() => clear(carrito)}
-              className="btn btn-success my-5 m-2"
+              className="btn btn-danger my-5 m-2"
             >
               Vaciar el carro
             </button>
