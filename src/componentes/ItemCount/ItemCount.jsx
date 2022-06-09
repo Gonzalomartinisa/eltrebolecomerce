@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-const ItemCount = ({stock, click}) => {
+
+const ItemCount = ({stock, click, item, productos}) => {
+console.log(stock)
   
   const [contador, setContador] = useState(1);
 
@@ -19,25 +21,25 @@ const ItemCount = ({stock, click}) => {
   return (
     <div className="d-flex justify-content-center p-5">
         <div>
-        <h3>Cantidad a comprar {contador}</h3>
+        <h3>Cantidad:{contador}</h3>
           <button className="btn btn-danger text-light m-2" onClick={sumar}>+</button>
           <button className="btn btn-danger text-light m-2" onClick={restar}>-</button>
         </div>
       
-      <div
-        style={{
+      <div style={{
           display: "flex",
           justifyContent: "space-around",
           width: "200px",
           padding: "10px",
           margin: "10px",
-        }}
+        }} 
       >
-        <Link to="" onClick={() => click(contador)}  className="btn btn-success w-100 text-light">Agregar al carro</Link>
-      
-      </div>
+        </div>
+        <Link to="" onClick={() => click(contador)}  className="btn btn-success w-100 text-light">Seleccionar la cantidad</Link>      
     </div>
+    
   );
 };
 
 export default ItemCount;
+

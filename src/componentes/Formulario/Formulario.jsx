@@ -3,6 +3,7 @@ import { useState, useContext, useEffect } from 'react';
 import { GlobalContext } from "../../context/GlobalStateContext";
 import { collection, addDoc, getFirestore,} from 'firebase/firestore'
 import swal from 'sweetalert';
+import InputFormulario from '../InputFormulario/InputFormulario';
 
 const Formulario = () => {
 
@@ -14,15 +15,15 @@ const Formulario = () => {
 
     const [formulario, setFormulario] = useState({
         buyer: {
-            nombre: "",
-            email: "",
-            telefono: "",
+            Nombre: "",
+            Email: "",
+            Telefono: "",
         },
         total: total,
         items: compra,
     })
 
-    const {buyer: {nombre, email, telefono}} = formulario;
+    // const {buyer: {Nombre, Email, Telefono}} = formulario;
 
     const handleChange = (e) => {
       const {name, value} = e.target;
@@ -62,12 +63,34 @@ const Formulario = () => {
     }
   }, [orderID])
     
-
+  
   return (
+    <div className='d-flex row-cols-2'>
     <>
     <h1 className='d-flex justify-content-center p-5'>Datos del comprador</h1>
     <form onSubmit={sendOrder} class="row g-3 p-5" id="form">
-    <div class="col-md-8 position-relative">
+      {Object.keys(formulario.buyer).map((key, index) => (
+         <InputFormulario
+            //  key={index}
+             name={`${key}`}
+             value={key.value}
+             onChange={handleChange}
+         />
+      ))}
+  
+    <div class="col-md-8 justify-content-center">
+      <button class="btn btn-primary" type="submit">Confirmar compra</button>
+    </div>
+  </form>
+  </>
+  </div>
+  )
+  }
+
+export default Formulario
+
+
+  {/* <div class="col-md-8 position-relative">
       <label for="validationTooltip02" class="form-label">Nombre completo</label>
       <input type="text" class="form-control" name="nombre" value={nombre} onChange={handleChange} required/>
       <div class="valid-tooltip">
@@ -90,13 +113,4 @@ const Formulario = () => {
       <div class="invalid-tooltip">
         Please provide a valid zip.
       </div>
-    </div>
-    <div class="col-md-8 justify-content-center">
-      <button class="btn btn-primary" type="submit">Confirmar compra</button>
-    </div>
-  </form>
-  </>
-  )
-  }
-
-export default Formulario
+    </div> */}

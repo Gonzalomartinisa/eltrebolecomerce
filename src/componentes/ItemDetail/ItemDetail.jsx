@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
-import Card from "../Card/Card";
 import { useState } from 'react'
 import { GlobalContext } from "../../context/GlobalStateContext";
 
@@ -22,8 +21,12 @@ const ItemDetail = ({ productos: {id, img, nombre, precio, stock, coccion, tipo,
   const item = {
     id: id, img: img, nombre: nombre, precio: precio, stock: stock, coccion: coccion, descripcion: descripcion, cantidad: cantidadComprada}
 
+    const verificarCarrito = (carrito, item) => {
+      return carrito.some((a) => a.id === item.id)
+  };
   
   return (
+    
     <div className="card" style={{width:"500px", fontSize:"20px", fontFamily:"sans-serif", backgroundColor:""}}>
     <img src={img} className="card-img-top" alt="..."/>
     <div className="card-body">
@@ -32,13 +35,14 @@ const ItemDetail = ({ productos: {id, img, nombre, precio, stock, coccion, tipo,
       <p className="card-text">{descripcion}</p>
       <p className="card-text">{coccion}</p>
       <p className="card-text">Precio: {precio} pesos</p>
-      <p className="card-text">Stock: {stock} kilos</p>
-      {cantidadComprada > 0 ? (
-        <Link to={'/CartContext'} onClick={() => agregarCarrito(item)} className='btn btn-success my-5'>Ir al carrito</Link>
-      ) : (
+      <p className="card-text">Stock: {stock} kilos</p>  
+      <p>Vas a enviar al carrito {cantidadComprada} kilos de {nombre} por {cantidadComprada * precio} pesos</p>
+      {cantidadComprada > 0 ? ( 
+      <Link to={'/CartContext'} onClick={() => agregarCarrito(item)} className='btn btn-success my-5'>Agregar al carrito</Link>
+      ) : ( 
       <ItemCount stock={stock}
-          click={cantidadAAgregar}/>      
-      )}
+          click={cantidadAAgregar}/> 
+         )} 
       <Link to={"/"} className="btn btn-primary my-5 m-2"><i className="mx-1 bi bi-arrow-left"></i>Volver</Link> 
     </div>
   </div>
@@ -46,4 +50,7 @@ const ItemDetail = ({ productos: {id, img, nombre, precio, stock, coccion, tipo,
 }
 
 export default ItemDetail;
+
+
+
 

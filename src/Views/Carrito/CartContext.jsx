@@ -50,7 +50,7 @@ const CartContext = () => {
           )}
           <div className="d-flex justify-content-center">
             <Link className="btn btn-success my-5 m-2" to="/">
-              <i className="mx-1 bi bi-arrow-left"></i>Volver
+              <i className="mx-1 bi bi-arrow-left"></i>Seguir comprando
             </Link>
             <button
               onClick={() => clear(carrito)}

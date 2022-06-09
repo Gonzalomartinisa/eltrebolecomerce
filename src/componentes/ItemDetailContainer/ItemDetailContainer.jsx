@@ -10,7 +10,6 @@ const ItemDetailContainer = () => {
 
   const [productos, setProductos] = useState(null)
 
-
   const getData = async () => {
     const itemDetailCollection = collection(db, "productos")
     try {

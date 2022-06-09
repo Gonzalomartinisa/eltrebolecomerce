@@ -1,18 +1,20 @@
 import React, { createContext, useEffect, useState } from 'react'
 import Toastify from 'toastify-js'
+import swal from 'sweetalert';
 
 export const GlobalContext = createContext('')
 
 const GlobalProvider = ({children}) => {
 
+        const verificarCarrito = (carrito, item) => {
+      return carrito.some((a) => a.id === item.id)
+  };
+
     const [carrito, setCarrito] = useState([])
 
     const agregarCarrito = (productos) => {
       if (carrito.find(ite => ite.id === productos.id)){
-        Toastify({
-          text: "Ya agregaste este producto a tu carrito",
-          duration: 2000
-         }).showToast();
+        swal ("Atencion", "Este producto ya se encuentra en tu carrito" ,  "error" )
       } else {
         setCarrito([...carrito, productos])
       }}
@@ -31,6 +33,7 @@ const GlobalProvider = ({children}) => {
         (total, productos) => total + productos.cantidad * productos.precio, 0)
       setTotal(calculoTotal);
     }, [carrito])
+    
     
     
   return (
