@@ -9,8 +9,8 @@ const Formulario = () => {
 
   const {total, carrito, clear} = useContext(GlobalContext);
 
-  const compra = carrito.map(({id, nombre, precio, cantidad}) => ({
-    id, nombre, precio, cantidad,
+  const compra = carrito.map(({id, nombre, precio, contador}) => ({
+    id, nombre, precio, contador,
   }));
 
     const [formulario, setFormulario] = useState({
@@ -22,8 +22,6 @@ const Formulario = () => {
         total: total,
         items: compra,
     })
-
-    // const {buyer: {Nombre, Email, Telefono}} = formulario;
 
     const handleChange = (e) => {
       const {name, value} = e.target;
@@ -89,28 +87,4 @@ const Formulario = () => {
 
 export default Formulario
 
-
-  {/* <div class="col-md-8 position-relative">
-      <label for="validationTooltip02" class="form-label">Nombre completo</label>
-      <input type="text" class="form-control" name="nombre" value={nombre} onChange={handleChange} required/>
-      <div class="valid-tooltip">
-        Looks good!
-      </div>
-    </div>
-    <div class="col-md-8 position-relative">
-      <label for="validationTooltipUsername" class="form-label">Correo electronico</label>
-      <div class="input-group has-validation">
-        <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
-        <input type="text" class="form-control" id="validationTooltipUsername" name="email" value={email} onChange={handleChange} aria-describedby="validationTooltipUsernamePrepend" required/>
-        <div class="invalid-tooltip">
-          Please choose a unique and valid username.
-        </div>
-      </div>
-    </div>
-    <div class="col-md-8 position-relative">
-      <label for="validationTooltip05" class="form-label">Telefono</label>
-      <input type="text" class="form-control" id="validationTooltip05" name="telefono" value={telefono} onChange={handleChange} required/>
-      <div class="invalid-tooltip">
-        Please provide a valid zip.
-      </div>
-    </div> */}
+     

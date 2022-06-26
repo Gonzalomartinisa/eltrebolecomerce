@@ -1,13 +1,12 @@
 import React, { createContext, useEffect, useState } from 'react'
-import Toastify from 'toastify-js'
 import swal from 'sweetalert';
 
 export const GlobalContext = createContext('')
 
 const GlobalProvider = ({children}) => {
 
-        const verificarCarrito = (carrito, item) => {
-      return carrito.some((a) => a.id === item.id)
+    const verificarCarrito = (carrito, item) => {
+    return carrito.some((a) => a.id === item.id)
   };
 
     const [carrito, setCarrito] = useState([])
@@ -30,7 +29,7 @@ const GlobalProvider = ({children}) => {
 
     useEffect(() => {
       const calculoTotal = carrito.reduce(
-        (total, productos) => total + productos.cantidad * productos.precio, 0)
+        (total, productos) => total + productos.contador * productos.precio, 0)
       setTotal(calculoTotal);
     }, [carrito])
     
@@ -38,7 +37,7 @@ const GlobalProvider = ({children}) => {
     
   return (
     <div>
-    <GlobalContext.Provider value={{carrito, agregarCarrito, clear, eliminarProducto, total}}>
+    <GlobalContext.Provider value={{carrito, agregarCarrito, clear, eliminarProducto, verificarCarrito, total}}>
         {children}
     </GlobalContext.Provider>
     </div>
