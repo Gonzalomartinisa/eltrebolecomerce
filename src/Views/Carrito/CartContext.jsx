@@ -10,10 +10,11 @@ const CartContext = () => {
     <>
       <h1 className="d-flex justify-content-center p-5">Tus compras</h1>
       <div className="container-fluid">
-        <div class="row d-flex justify-around">
+        <div className="row d-flex justify-content-evenly ">
+          
           {carrito.length > 0 ? (
             carrito.map((item, index) => {
-              const subTotal = item.precio * item.cantidad;
+              const subTotal = item.precio * item.contador;
 
               return (
                 <div className="col-sm-3">
@@ -29,7 +30,7 @@ const CartContext = () => {
                         Precio por kilo: {item.precio} pesos
                       </p>
                       <p className="card-text">
-                        Cantidad: {item.cantidad} kilos
+                        Cantidad: {item.contador} kilos
                       </p>
                       <p className="card-text">Sub-Total: {subTotal} pesos</p>
                       <button
@@ -43,29 +44,37 @@ const CartContext = () => {
                 </div>
               );
             })
+          
           ) : (
             <h1 className="d-flex justify-content-center">
               El carrito esta vacio{" "}
             </h1>
           )}
-          <div className="d-flex justify-content-center">
-            <Link className="btn btn-success my-5 m-2" to="/">
-              <i className="mx-1 bi bi-arrow-left"></i>Seguir comprando
-            </Link>
-            <button
+            
+          {carrito.length > 0 ? (
+         <div className="row d-flex justify-content-center">
+          <button
               onClick={() => clear(carrito)}
               className="btn btn-danger my-5 m-2"
             >
               Vaciar el carro
             </button>
-          </div>
-          <h2 className="d-flex justify-content-center">
+            <Link className="btn btn-success my-5 m-2" to="/">
+              <i className="mx-1 bi bi-arrow-left"></i>Seguir comprando
+            </Link>
+            <h2 className="d-flex justify-content-center">
             {" "}
             El total de tu compra es {total !== 0 ? total : "0"} pesos
           </h2>
-         <div className="d-flex justify-content-center">
-          <Formulario carrito={carrito} />
+            <Formulario carrito={carrito} />
           </div>
+          
+           ) : (
+            <Link className="btn btn-success my-5 m-2" to="/">
+              <i className="mx-1 bi bi-arrow-left"></i>Seguir comprando
+            </Link>
+            
+           )}
         </div>
       </div>
     </>
